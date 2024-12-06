@@ -1,0 +1,25 @@
+---
+import NumbersCard from "./NumbersCard/NumbersCard.astro";
+const numbersCard = [
+    { number: "36М+", cardText: "We are online" },
+    { number: "21.5 K+", cardText: "Traiders in platform" },
+    { number: "325 M+", cardText: "Total deals in platform" },
+];
+---
+
+<section class="numbersSection">
+    <div class="container">
+        <div class="numbers">
+            <div class="numbersHeader">
+                <h2>numbers</h2>
+            </div>
+            <div class="numbersText">
+                <h2>$18.5 B+</h2>
+                <span>Total trading volume</span>
+            </div>
+            <div class="numbersCards">
+                {numbersCard.map((item) => <NumbersCard numbers={item.number} description={item.cardText} />)}
+            </div>
+        </div>
+    </div>
+</section>
