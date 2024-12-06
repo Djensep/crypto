@@ -1,0 +1,39 @@
+---
+import BenefitBlock from "./BenefitBlock/BenefitBlock.astro";
+
+const benefitsList = [
+    {
+        imgName: "/benefits/benefit1.png",
+        altName: "tablet1",
+        header: "Interface Builder",
+        title: "Customize your look",
+    },
+    {
+        imgName: "/benefits/benefit2.png",
+        altName: "tablet2",
+        header: "MultiChart",
+        title: "Add any trading pairs from different exchanges and analyzecryptocurrency assets on one screen",
+    },
+    {
+        imgName: "/benefits/benefit3.png",
+        altName: "tablet3",
+        header: "Portfolio & Statistics",
+        title: "Your assets on all connected exchanges are collected in one place",
+    },
+];
+---
+
+<section class="benefitsSection">
+    <div class="container">
+        <div class="benefits">
+            {
+                benefitsList.map((benefit) => (
+                    <BenefitBlock imgUrl={benefit.imgName} altName={benefit.altName} blockTitle={benefit.header}>
+                        <h4 slot="benefitSubTitle">Подзаголовок для {benefit.header}</h4>
+                        <p slot="description">Описание для {benefit.title}</p>
+                    </BenefitBlock>
+                ))
+            }
+        </div>
+    </div>
+</section>

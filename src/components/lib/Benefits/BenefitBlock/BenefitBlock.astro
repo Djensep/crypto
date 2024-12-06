@@ -1,0 +1,16 @@
+---
+const { blockTitle, imgUrl, altName } = Astro.props;
+---
+
+<div class="benefitBlock benefitsFrame1" id="">
+    <div class="benefitsImage">
+        <img src={imgUrl} alt={altName} />
+    </div>
+    <div class="benefitsContent">
+        <h2>{blockTitle}</h2>
+        <div class="benefitsText">
+            <slot name="benefitSubTitle" />
+            <slot name="description" />
+        </div>
+    </div>
+</div>
