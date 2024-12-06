@@ -1,5 +1,14 @@
 ---
+import Partner from "./Partner/Partner.astro";
 
+const partnersList = [
+    { linkTo: "", imgUrl: "/public/partners/bybit.png", altName: "bybit" },
+    { linkTo: "", imgUrl: "/public/partners/okx.png", altName: "okx" },
+    { linkTo: "", imgUrl: "/public/partners/exmo.png", altName: "exmo" },
+    { linkTo: "", imgUrl: "/public/partners/huobi.png", altName: "huobi" },
+    { linkTo: "", imgUrl: "/public/partners/ftx.png", altName: "ftx" },
+    { linkTo: "", imgUrl: "/public/partners/binance.png", altName: "binance" },
+];
 ---
 
 <section class="promoSection">
@@ -12,13 +21,11 @@
             <div class="subPromo">
                 <h3>Trade for free on your favorite exchanges</h3>
                 <div class="partners">
-                    <a href="#"><img src="" alt="" /></a>
-                    <a href="#"><img src="" alt="" /></a>
-                    <a href="#"><img src="" alt="" /></a>
-                    <a href="#"><img src="" alt="" /></a>
-                    <a href="#"><img src="" alt="" /></a>
-                    <a href="#"><img src="" alt="" /></a
-                    >
+                    {
+                        partnersList.map((item) => (
+                            <Partner link={item.linkTo} imgUrl={item.imgUrl} altName={item.altName} />
+                        ))
+                    }
                 </div>
             </div>
         </div>
